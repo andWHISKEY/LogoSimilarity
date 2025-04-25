@@ -7,16 +7,17 @@ Contrastive Learning을 통해 이미지의 특징 벡터를 학습하고, 이�
 ---
 
 ## 📂 프로젝트 구조
-hyegyo/
-├── markview_image/
-│   ├── train.py              # 학습 및 검증 코드
-│   ├── model.py              # SimCLR 모델 정의
-│   ├── loss.py               # NT-Xent Loss 정의
-│   ├── dataset.py            # dataset 및 augmentation 코드
-│   ├── utils.py              # featuremap 추출 및 저장 코드
-│   ├── find_similar_logos.py # 유사한 이미지 검색 및 파일명 반환
-│   ├── split_KR_USA_logo.py  # 한국 미국 로고 폴더 분할 코드드
-│   ├── README.md             # 프로젝트 설명 파일
+logo/
+├── README.md
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   ├── model.py                # SimCLRModel, ProjectionHead 정의
+│   ├── loss.py                 # nt_xent_loss_with_reweighting 함수
+│   ├── datasets.py             # 데이터 로드/전처리 모듈
+│   ├── train.py                # 학습 루프 및 스케줄러
+│   ├── evaluate.py             # 평가 및 임베딩 시각화
+│   └── utils.py                # 유틸리티 함수(imagehash 필터링 등)
 └── output/                   # 결과 저장 폴더
     └── featuremap/           # featuremap 저장 폴더
 
@@ -146,8 +147,8 @@ find_similar_logos의 find_top_k_similar_from_combined 함수를 사용하여 �
 
 ## 📋 Output Featuremap 구조
 featuremap/
-├── combined_featuremap_filenames.npy #featuremap 과 filename mapping
-├── combined_featuremap.npy # featuremap 전부 stack
+├──  combined_featuremap_filenames.npy #featuremap 과 filename mapping
+├──  combined_featuremap.npy # featuremap 전부 stack
 
 ---
 
