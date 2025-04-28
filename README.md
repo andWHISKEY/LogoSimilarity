@@ -7,7 +7,7 @@ Contrastive Learning을 통해 이미지의 특징 벡터를 학습하고, 이�
 ---
 
 ## 📂 프로젝트 구조
-```
+```text
 logo/
 ├── README.md
 ├── requirements.txt
@@ -147,10 +147,11 @@ find_similar_logos의 find_top_k_similar_from_combined 함수를 사용하여 �
 ---
 
 ## 📋 Output Featuremap 구조
+```
 featuremap/
 ├──  combined_featuremap_filenames.npy #featuremap 과 filename mapping
 ├──  combined_featuremap.npy # featuremap 전부 stack
-
+```
 ---
 
 ## 📧 문의
